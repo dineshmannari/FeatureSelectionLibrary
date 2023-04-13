@@ -1,0 +1,8 @@
+setup.py
+feature_selector/__init__.py
+feature_selector/feature_selector.py
+feature_selector.egg-info/PKG-INFO
+feature_selector.egg-info/SOURCES.txt
+feature_selector.egg-info/dependency_links.txt
+feature_selector.egg-info/requires.txt
+feature_selector.egg-info/top_level.txt
