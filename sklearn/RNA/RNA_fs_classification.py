@@ -158,7 +158,7 @@ print(f"number_of_features = {number_of_features}")
 
 for name, classifier in zip(classifier_names, classifiers):
     print(f"Currently on {classifier}")
-    selector = SelectFromModel(estimator=classifier, max_features = number_of_features)
+    selector = RFE(estimator=classifier,n_features_to_select = number_of_features, step = 1)
     selector.fit(X, y)
     col = X.columns[selector.get_support()].tolist()
     temp_X_train, temp_X_test = X_train[col], X_test[col]
@@ -171,7 +171,7 @@ for name, classifier in zip(classifier_names, classifiers):
 
 
 new_df = pd.DataFrame.from_dict(accuracy)
-new_df.to_csv('rna_sklearn_accuracy_sfm.csv')
+new_df.to_csv('rna_sklearn_accuracy_rfe.csv')
 
 
 # In[ ]:
